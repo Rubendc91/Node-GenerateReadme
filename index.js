@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generate = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
+
 
 
 // TODO: Create an array of questions for user input
@@ -62,21 +63,23 @@ inquirer
         name: 'email',
     },
 ])
-.then((data) => 
-fs.writeFile("README.md", 
-`# ${data.title}\n
-/////////
-${data.license}\n
-Decsription:${data.description}\n
-Installation:${data.installation}\n
-Usage:${data.usage}\n
-Contributing:${data.contributing}\n
-Test Instuctions:${data.tests}\n
-Questions?:================\n
-https://github.com/${data.gitHubAccount}\n
-Email: ${data.email}\n`, (err) =>
-err ? console.log(err) : console.log('Success! your README file has been created.')))
+.then((data) => {  
 
+        fs.writeFile("README.md", 
+        `# ${data.title}\n
+        /////////
+        ${data.license}\n
+        Decsription:${data.description}\n
+        Installation:${data.installation}\n
+        Usage:${data.usage}\n
+        Contributing:${data.contributing}\n
+        Test Instuctions:${data.tests}\n
+        Questions?:================\n
+        https://github.com/${data.gitHubAccount}\n
+        Email: ${data.email}\n`, (err) =>
+        err ? console.log(err) : console.log('Success! your README file has been created.'))
+});
+    
 // .then((data) =>
 // fs.appendFile("README.md", `Decsription:${data.description}`, (err) =>
 // err ? console.log(err) : console.log('Success!')))
