@@ -1,7 +1,6 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +8,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+    "inquirer": "^8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rubendc91/Node-GenerateReadme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rubendc91/Node-GenerateReadme/issues"
+  },
+  "homepage": "https://github.com/Rubendc91/Node-GenerateReadme#readme",
+  "description": ""
 }
