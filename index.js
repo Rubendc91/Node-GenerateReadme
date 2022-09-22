@@ -64,7 +64,7 @@ inquirer
 ])
 .then((data) => 
 fs.writeFile("README.md", 
-`#${data.title}\n
+`# ${data.title}\n
 /////////
 ${data.license}\n
 Decsription:${data.description}\n
