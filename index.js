@@ -6,101 +6,69 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
-const questions = ["What is the Title ", "Give a Description", "Table of Contents", "Are there any installation instructions", "what is the Usage of this app", "What License does you app have", "are there any contributing guidelines ", "how do you test your file", "what is your git Hub username", "What is you email"];
 
 
-inquirer
-    .prompt([
+const questions = () => {
+    return inquirer.prompt([
         {
             type: 'input',
-            message: questions[0],
+            message: "What is the Title ",
             name: 'title',
         },
         {
             type: 'input',
-            message: questions[1],
+            message: "Give a Description",
             name: 'description',
         },
         {
             type: 'input',
-            message: questions[2],
-            name: 'table of Contents',
-        },
-        {
-            type: 'input',
-            message: questions[3],
+            message: "Are there any installation instructions",
             name: 'installation',
         },
         {
             type: 'input',
-            message: questions[4],
+            message: "what is the Usage of this app",
             name: 'usageInfo',
         },
         {
             type: 'checkbox',
-            message: questions[5],
+            message: "What License does you app have",
             name: 'license',
             choices: ['MIT', 'Apache', 'GPLv3'],
         },
         {
             type: 'input',
-            message: questions[6],
+            message: "are there any contributing guidelines",
             name: 'contributing',
         },
         {
             type: 'input',
-            message: questions[7],
+            message: "how do you test your file",
             name: 'tests',
         },
         {
             type: 'input',
-            message: questions[8],
-            name: 'gitHubAccount',
+            message: "what is your git Hub username",
+            name: 'gitHub',
         },
         {
             type: 'input',
-            message: questions[9],
+            message: "What is you email",
             name: 'email',
         },
-    ])
-    .then((data) => {
-
-        fs.writeFile("README.md",
-            `# ${data.title}\n
-        /////////
-        ${data.license}\n
-        Decsription:${data.description}\n
-        Installation:${data.installation}\n
-        Usage:${data.usage}\n
-        Contributing:${data.contributing}\n
-        Test Instuctions:${data.tests}\n
-        Questions?:================\n
-        https://github.com/${data.gitHubAccount}\n
-        Email: ${data.email}\n`, (err) =>
-            err ? console.log(err) : console.log('Success! your README file has been created.'))
-    });
-
-// .then((data) =>
-// fs.appendFile("README.md", `Decsription:${data.description}`, (err) =>
-// err ? console.log(err) : console.log('Success!')))
-
-// fs.writeFile("README.md", JSON.stringify(data, null, '\t'), (err) =>
-// err ? console.log(err) : console.log('Success!')))
-
-
+    ]);
+};
 
 // // TODO: Create a function to write README file
-// function writeToFile(filename, data) {
 
-// }
+// TODO: Create a function to initialize app
+const init = () => {
+    questions()
+      // Use writeFileSync method to use promises instead of a callback function
+      .then((data) => fs.writeFileSync('README.md', generateMarkdown(data)))
+      .then(() => console.log('Successfully wrote to README.md'))
+      .catch((err) => console.error(err));
+  };
 
-
-
-// // TODO: Create a function to initialize app
-// function init() {
-
-
-// }
-
-// // Function call to initialize app
-// init();
+// Function call to initialize app
+init();
