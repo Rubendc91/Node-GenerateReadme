@@ -24,3 +24,5 @@
   ## Questions
   - Github: [Rubendc91](https://github.com/Rubendc91)
   - Email: Rubendc91@gmail.com 
+  - link to video wlakthrough: https://drive.google.com/file/d/10zzs0PZeYGWxq-F5nMQ1dGAYt_ToldLe/view
+  
