@@ -1,26 +1,26 @@
-# generate readme 
+# node-generateREADME
   ## LicensingBadges:
-  ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Table of Contents 
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contribution](#contribution)
   - [Testing](#testing)
-  - [Additional Info](#questions)
+  - [Additional Info](#Questions)
   ## Description:
-  generates a read me file 
+  generates a quality read me.
   ## Installation:
-  install node.js and npm inqirer
+  install node.js and npm inquirer.
   ## Usage:
-  this program will creat a high quality ready me file using your information
+  This program will quickly create a quality README.md file using the data you input.
   ## License
   Read more about MIT here:
-  (https://www.gnu.org/licenses/gpl-3.0)
+  (https://opensource.org/licenses/MIT)
   ## Contribution:
   none
   ## Testing:
-  open intergratded terminal and run "node index.js"
-  ## Questions:
-  - Github: Rubendc91(https://github.com/Rubendc91)
+  open terminal navigate to folder containing index.js and run "node index.js" in terminal
+  ## Questions
+  - Github: [Rubendc91](https://github.com/Rubendc91)
   - Email: Rubendc91@gmail.com 
