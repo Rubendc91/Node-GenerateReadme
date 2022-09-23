@@ -7,7 +7,7 @@
   - [Usage](#usage)
   - [Contribution](#contribution)
   - [Testing](#testing)
-  - [Additional Info](#additional-info)
+  - [Additional Info](#Questions)
   ## Description:
   generates a quality read me.
   ## Installation:
@@ -21,6 +21,6 @@
   none
   ## Testing:
   open terminal navigate to folder containing index.js and run "node index.js" in terminal
-  ## Any Questions? contact me @:
+  ## Questions
   - Github: [Rubendc91](https://github.com/Rubendc91)
   - Email: Rubendc91@gmail.com 

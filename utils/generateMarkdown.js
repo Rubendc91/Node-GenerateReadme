@@ -54,7 +54,7 @@ function generateMarkdown(data) {
   - [Usage](#usage)
   - [Contribution](#contribution)
   - [Testing](#testing)
-  - [Additional Info](#additional-info)
+  - [Additional Info](#questions)
   ## Description:
   ${data.description}
   ## Installation:
@@ -68,7 +68,7 @@ function generateMarkdown(data) {
   ${data.contributing}
   ## Testing:
   ${data.tests}
-  ## Any Questions? contact me @:
+  ## Questions:
   - Github: ${data.gitHub}(https://github.com/${data.gitHub})
   - Email: ${data.email} `;
 }
