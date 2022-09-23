@@ -31,7 +31,7 @@ const questions = () => {
             name: 'usageInfo',
         },
         {
-            type: 'checkbox',
+            type: 'list',
             message: "What License does you app have",
             name: 'license',
             choices: ['MIT', 'Apache', 'GPLv3'],

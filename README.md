@@ -9,18 +9,18 @@
   - [Testing](#testing)
   - [Additional Info](#additional-info)
   ## Description:
-  generates a quality read me 
+  generates a quality read me.
   ## Installation:
-  install node.js and npm inquirer
+  install node.js and npm inquirer.
   ## Usage:
-  undefined
+  This program will quickly create a quality README.md file using the data you input.
   ## License
   Read more about MIT here:
   (https://opensource.org/licenses/MIT)
   ## Contribution:
-  undefined
+  none
   ## Testing:
-  undefined
+  open terminal navigate to folder containing index.js and run "node index.js" in terminal
   ## Any Questions? contact me @:
   - Github: [Rubendc91](https://github.com/Rubendc91)
   - Email: Rubendc91@gmail.com 
