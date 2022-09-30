@@ -1,79 +1,74 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
+
 
 
 // TODO: Create an array of questions for user input
-const questions = ["What is the Title ", "Give a Description", "Table of Contents", "Are there any installation instructions", "what is the Usage of this app", "What License does you app have", "are there any contributing guidelines ", "Tests", "Questions?"];
 
 
-inquirer
-.prompt([
-    {
-        type: 'input',
-        message: questions[0],
-        name: 'Title',
-    },
-    {
-        type: 'input',
-        message: questions[1],
-        name: 'Description',
-    },
-    {
-        type: 'input',
-        message: questions[2],
-        name: 'Table of Contents',
-    },
-    {
-        type: 'input',
-        message: questions[3],
-        name: 'Installation',
-    },
-    {
-        type: 'input',
-        message: questions[4],
-        name: 'UsageInfo',
-    },
-    {
-        type: 'checkbox',
-        message: questions[5],
-        name: 'License',
-        choices: ['MIT', 'CSS', 'JavaScript', 'MySQL'],
-    },
-    {
-        type: 'input',
-        message: questions[6],
-        name: 'Contributing',
-    },
-    {
-        type: 'input',
-        message: questions[7],
-        name: 'Tests',
-    },
-    {
-        type: 'input',
-        message: questions[8],
-        name: 'Questions',
-    },
-])
-.then((data) =>
-fs.writeFile("README.md", JSON.stringify(data, null, '\t'), (err) =>
-err ? console.log(err) : console.log('Success!')))
-
-  
-
+const questions = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: "What is the Title ",
+            name: 'title',
+        },
+        {
+            type: 'input',
+            message: "Give a Description",
+            name: 'description',
+        },
+        {
+            type: 'input',
+            message: "Are there any installation instructions",
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            message: "what is the Usage of this app",
+            name: 'usageInfo',
+        },
+        {
+            type: 'list',
+            message: "What License does you app have",
+            name: 'license',
+            choices: ['MIT', 'Apache', 'GPLv3'],
+        },
+        {
+            type: 'input',
+            message: "are there any contributing guidelines",
+            name: 'contributing',
+        },
+        {
+            type: 'input',
+            message: "how do you test your file",
+            name: 'tests',
+        },
+        {
+            type: 'input',
+            message: "what is your git Hub username",
+            name: 'gitHub',
+        },
+        {
+            type: 'input',
+            message: "What is you email",
+            name: 'email',
+        },
+    ]);
+};
 
 // // TODO: Create a function to write README file
-// function writeToFile(filename, data) {
 
-// }
+// TODO: Create a function to initialize app
+const init = () => {
+    questions()
+      // Use writeFileSync method to use promises instead of a callback function
+      .then((data) => fs.writeFileSync('README.md', generateMarkdown(data)))
+      .then(() => console.log('Successfully wrote to README.md'))
+      .catch((err) => console.error(err));
+  };
 
-
-// // TODO: Create a function to initialize app
-// function init() {
-
-
-// }
-
-// // Function call to initialize app
-// init();
+// Function call to initialize app
+init();
